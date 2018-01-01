@@ -1,0 +1,253 @@
+# step 1
+
+
+import random
+
+Boston =    	[1, 1, 0, 0, 1, 1, 1]
+NewYork=	    [1,	1, 0, 1, 1,	1, 0]
+Philadelphia=	[0,	1, 0, 1, 1,	1, 1]
+Baltimore=   	[0,	1, 1, 0, 0,	1, 1]
+DC=	            [1,	1, 0, 1, 1,	1, 0]
+Richmond=    	[1,	1, 0, 1, 0,	1, 0]
+Charleston=	    [1,	0, 0, 1, 1,	1, 0]
+Jacksonville=	[1,	0, 1, 0, 0,	1, 1]
+StAugustine=	[1,	0, 1, 1, 0,	0, 0]
+OceanCity=	    [1,	0, 0, 0, 0,	0, 0]
+VirginiaBeach=	[1,	0, 1, 0, 0,	0, 0]
+MyrtleBeach=	[1,	0, 1, 0, 0,	0, 1]
+GoldenIsles=	[1,	0, 0, 0, 0,	1, 0]
+DaytonaBeach=	[1,	0, 1, 1, 0,	0, 1]
+
+Cities = ["Boston",	"NewYork",	"Philadelphia",	"Baltimore",	"DC",	"Richmond",	"Charleston",	"Jacksonville",	"StAugustine",	"OceanCity",	"VirginiaBeach",	"MyrtleBeach",	"GoldenIsles",	"DaytonaBeach"]
+Cities2 = [Boston,	NewYork,	Philadelphia,	Baltimore,	DC,	Richmond,	Charleston,	Jacksonville,	StAugustine,	OceanCity,	VirginiaBeach,	MyrtleBeach,	GoldenIsles,	DaytonaBeach]
+MyInterests = []
+Here = []
+
+print("please enter 1s and 0s")
+
+one = int(input("nature: "))
+two = int(input("art: "))
+three = int(input("science: "))
+four = int(input("buildings: "))
+five = int(input("food: "))
+six = int(input("history: "))
+seven = int(input("sports: "))
+
+MyInterests.append(one)
+MyInterests.append(two)
+MyInterests.append(three)
+MyInterests.append(four)
+MyInterests.append(five)
+MyInterests.append(six)
+MyInterests.append(seven)
+
+# step 2
+
+Bo= []
+Ne=	[]
+Ph=	[]
+Ba= []
+DC1=[]
+Ri= []
+Ch=	[]
+Ja= []
+St=	[]
+Oc=	[]  
+Vi=	[]
+My=	[]
+Go=	[]
+Da=	[]
+
+Bos=0
+New=0
+Phi=0
+Bal=0
+DC2=0
+Ric=0
+Cha=0
+Jac=0
+StA=0
+Oce=0
+Vir=0
+Myr=0
+Gol=0
+Day=0
+
+for i in range(0,7):
+    Bo.append(Boston[i] - MyInterests[i])
+    Bos = Bo.count(-1)
+    
+for i in range(0,7):
+    Ne.append(NewYork[i] - MyInterests[i])
+    New = Ne.count(-1)
+    
+for i in range(0,7):
+    Ph.append(Philadelphia[i] - MyInterests[i])
+    Phi = Ph.count(-1)
+
+for i in range(0,7):
+    Ba.append(Baltimore[i] - MyInterests[i])
+    Bal = Ba.count(-1)
+
+for i in range(0,7):
+    DC1.append(DC[i] - MyInterests[i])
+    DC2 = DC1.count(-1)
+
+for i in range(0,7):
+    Ri.append(Richmond[i] - MyInterests[i])
+    Ric = Ri.count(-1)
+
+for i in range(0,7):
+    Ch.append(Charleston[i] - MyInterests[i])
+    Cha = Ch.count(-1)
+
+for i in range(0,7):
+    Ja.append(Jacksonville[i] - MyInterests[i])
+    Jac = Ja.count(-1)
+
+for i in range(0,7):
+    St.append(StAugustine[i] - MyInterests[i])
+    StA = St.count(-1)
+
+for i in range(0,7):
+    Oc.append(OceanCity[i] - MyInterests[i])
+    Oce = Oc.count(-1)
+
+for i in range(0,7):
+    Vi.append(VirginiaBeach[i] - MyInterests[i])
+    Vir = Vi.count(-1)
+
+for i in range(0,7):
+    My.append(MyrtleBeach[i] - MyInterests[i])
+    Myr = My.count(-1)
+
+for i in range(0,7):
+    Go.append(GoldenIsles[i] - MyInterests[i])
+    Gol = Go.count(-1)
+
+for i in range(0,7):
+    Da.append(DaytonaBeach[i] - MyInterests[i])
+    Day = Da.count(-1)
+
+# step 3
+
+findMin = [Bos, New, Phi, Bal, DC2, Ric, Cha, Jac, StA, Oce, Vir, Myr, Gol, Day]
+
+Minimum1 = findMin.index(min(findMin))
+city1 = Cities[Minimum1]
+
+# step 4
+
+bestCity = Cities2[Minimum1]
+diff = []
+bestCityDiff = []
+
+for i in range(0,7):
+    diff.append(bestCity[i] - MyInterests[i])
+    if bestCity[i] - MyInterests[i] == -1:
+        bestCityDiff.append(i)
+
+newNeed = []
+for i in range(0,7):
+    if i in bestCityDiff:
+        newNeed.append(1)
+    else:
+        newNeed.append(0)
+
+# step 5
+
+Bo1= []
+Ne1=	[]
+Ph1=	[]
+Ba1= []
+DC11=[]
+Ri1= []
+Ch1=	[]
+Ja1= []
+St1=	[]
+Oc1=	[]  
+Vi1=	[]
+My1=	[]
+Go1=	[]
+Da1=	[]
+
+Bos1=0
+New1=0
+Phi1=0
+Bal1=0
+DC21=0
+Ric1=0
+Cha1=0
+Jac1=0
+StA1=0
+Oce1=0
+Vir1=0
+Myr1=0
+Gol1=0
+Day1=0
+
+for i in range(0,7):
+    Bo1.append(Boston[i] - newNeed[i])
+    Bos1 = Bo1.count(-1)
+    
+for i in range(0,7):
+    Ne1.append(NewYork[i] - newNeed[i])
+    New1 = Ne1.count(-1)
+    
+for i in range(0,7):
+    Ph1.append(Philadelphia[i] - newNeed[i])
+    Phi1 = Ph1.count(-1)
+
+for i in range(0,7):
+    Ba1.append(Baltimore[i] - newNeed[i])
+    Bal1 = Ba1.count(-1)
+
+for i in range(0,7):
+    DC11.append(DC[i] - newNeed[i])
+    DC21 = DC11.count(-1)
+
+for i in range(0,7):
+    Ri1.append(Richmond[i] - newNeed[i])
+    Ric1 = Ri1.count(-1)
+
+for i in range(0,7):
+    Ch1.append(Charleston[i] - newNeed[i])
+    Cha1 = Ch1.count(-1)
+
+for i in range(0,7):
+    Ja1.append(Jacksonville[i] - newNeed[i])
+    Jac1 = Ja1.count(-1)
+
+for i in range(0,7):
+    St1.append(StAugustine[i] - newNeed[i])
+    StA1 = St1.count(-1)
+
+for i in range(0,7):
+    Oc1.append(OceanCity[i] - newNeed[i])
+    Oce1 = Oc1.count(-1)
+
+for i in range(0,7):
+    Vi1.append(VirginiaBeach[i] - newNeed[i])
+    Vir1 = Vi1.count(-1)
+
+for i in range(0,7):
+    My1.append(MyrtleBeach[i] - newNeed[i])
+    Myr1 = My1.count(-1)
+
+for i in range(0,7):
+    Go1.append(GoldenIsles[i] - newNeed[i])
+    Gol1 = Go1.count(-1)
+
+for i in range(0,7):
+    Da1.append(DaytonaBeach[i] - newNeed[i])
+    Day1 = Da1.count(-1)
+    
+findMin1 = [Bos1, New1, Phi1, Bal1, DC21, Ric1, Cha1, Jac1, StA1, Oce1, Vir1, Myr1, Gol1, Day1]
+
+Minimum2 = findMin1.index(min(findMin1))
+city2 = Cities[Minimum2]
+
+Here.append(city1)
+Here.append(city2)
+
+print("You should visit: " + str(Here))
